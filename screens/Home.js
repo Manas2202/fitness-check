@@ -50,7 +50,7 @@ export default function Home({navigation}) {
                     <>
                         <Header user={userDetails} navigation={navigation}/>
                         <DietCard />
-                        <StatsCards />
+                        <StatsCards  navigation={navigation}/>
                         <ServicesCarousel />
                     </>
                 ) :  (

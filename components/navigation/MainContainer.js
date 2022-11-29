@@ -10,6 +10,7 @@ import VideoType from '../../screens/VideoType';
 import VideosList from '../../screens/VideosList';
 import Login from '../../screens/Login';
 import Register from '../../screens/Register';
+import PedometerClass from '../../screens/PedometerClass';
 const homeName = 'Home';
 const profileName = 'Profile';
 const hospitalName = 'Hospital';
@@ -17,6 +18,7 @@ const videoTypeName = 'Videos';
 const videosListTypeName = 'VideosList';
 const loginName = 'Login';
 const registerName = 'Register';
+const pedometerName = 'PedometerClass';
 const Tab = createBottomTabNavigator();
 
 export default function MainContainer () {
@@ -45,6 +47,7 @@ export default function MainContainer () {
                 <Tab.Screen name={videosListTypeName} component={VideosList} options={{headerShown: false,tabBarStyle:{display:'none'},tabBarLabel:''}}/>
                 <Tab.Screen name={loginName} component={Login} options={{headerShown: false,tabBarStyle:{display:'none'},tabBarLabel:''}}/>
                 <Tab.Screen name={registerName} component={Register} options={{headerShown: false,tabBarStyle:{display:'none'},tabBarLabel:''}}/>
+                <Tab.Screen name={pedometerName} component={PedometerClass} options={{headerShown: false,tabBarStyle:{display:'none'},tabBarLabel:''}}/>
             </Tab.Navigator>
         </NavigationContainer>
     )

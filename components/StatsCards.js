@@ -4,11 +4,16 @@ import {
     Text,
     View,
     Image,
-    ProgressBarAndroid
+    ProgressBarAndroid,
+    Pressable
 } from 'react-native';
-import cycle from '../assets/images/cycle.png';
 import walk from '../assets/images/walk.png';
-export default function StatsCards() {
+export default function StatsCards({navigation}) {
+
+    const handlePedometer = () => {
+        navigation.navigate('PedometerClass');
+    }
+
     return (
         <>
             <Text style={styles.servicesHeadingText}>Pedometer</Text>
@@ -20,21 +25,14 @@ export default function StatsCards() {
                             style={styles.statHeaderImg}
                             />
                     </View>
-                    <View style={styles.progressBarParent}>
-                        <Text style={styles.progressText}>60%</Text>
-                        <ProgressBarAndroid
-                            styleAttr='Horizontal'
-                            indeterminate={false}
-                            progress={0.6}
-                            color='#8860A2'
-                            style={styles.progressBar}
-                            />
-                    </View>
                     <View style={styles.statsCardFooter}>
-                        <Text style={styles.footerText}>Target - 5 Km.</Text>
-                        <Text style={styles.footerText}>Current - 3 Km.</Text>
+                        <Text style={styles.footerText}>Target - ?</Text>
+                        <Text style={styles.footerText}>Current - ?</Text>
                         <Text style={styles.statCardType}>Walking</Text>
                     </View>
+                    <Pressable style={styles.button} onPress={handlePedometer}>
+                        <Text style={styles.text}>Get Started</Text>
+                    </Pressable>
                 </View>
             </View>
         </>
@@ -122,5 +120,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#171717',
         marginTop: 20,
-    }
+    },
+    button: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingVertical: 8,
+        paddingHorizontal: 16,
+        borderRadius: 4,
+        elevation: 3,
+        marginTop:20,
+        backgroundColor: 'black',
+        width: '50%',
+        marginLeft: 15,
+    },
+    text: {
+        fontSize: 12,
+        lineHeight: 21,
+        fontWeight: 'bold',
+        letterSpacing: 0.25,
+        color: 'white',
+    },
 })
